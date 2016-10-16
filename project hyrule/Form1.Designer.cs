@@ -494,7 +494,7 @@
             this.ipBox.Name = "ipBox";
             this.ipBox.Size = new System.Drawing.Size(105, 20);
             this.ipBox.TabIndex = 0;
-            this.ipBox.Text = "192.168.178.33";
+            this.ipBox.Text = "192.168.1.119";
             // 
             // connectBox
             // 

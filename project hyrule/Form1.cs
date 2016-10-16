@@ -25,6 +25,10 @@ namespace Hyrule
     {
         public uint diff;
         public TCPGecko Gecko;
+        private uint p2(uint p1)
+        {
+            return p1 + 0x228;
+        }
 
         public Form1()
         {
@@ -259,8 +263,9 @@ namespace Hyrule
         private void button2_Click(object sender, EventArgs e)
         {
 
-            Gecko.poke32(0x1071211C, 0x00000000); //damage taken
-
+            uint p1 = 0x1071211C;
+            Gecko.poke32(p1, 0x00000000); //damage taken
+            Gecko.poke32(p2(p1), 0x00000000);
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -283,15 +288,17 @@ namespace Hyrule
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            timer1.Interval = 500;
-            Gecko.poke32(0x1071211C, 0x00000000); //damage taken
+            timer1.Interval = 2000;
+            uint p1 = 0x1071211C;
+            Gecko.poke32(p1, 0x00000000); //damage taken
+            Gecko.poke32(p2(p1), 0x00000000);
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-
-            Gecko.poke32(0x107121AC, 0x01010000); //full magic
-
+            uint p1 = 0x107121AC;
+            Gecko.poke32(p1, 0x01010000); //full magic
+            Gecko.poke32(p2(p1), 0x01010000);
         }
 
         private void checkBox2_CheckedChanged(object sender, EventArgs e)
@@ -314,15 +321,17 @@ namespace Hyrule
 
         private void timer2_Tick(object sender, EventArgs e)
         {
-            timer2.Interval = 500;
-            Gecko.poke32(0x107121AC, 0x01010000); //full magic
+            timer2.Interval = 2000;
+            uint p1 = 0x107121AC;
+            Gecko.poke32(p1, 0x01010000); //full magic
+            Gecko.poke32(p2(p1), 0x01010000);
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-
-            Gecko.poke32(0x1071219C, 0x03030000); //full special
-
+            uint p1 = 0x1071219C;
+            Gecko.poke32(p1, 0x03030000); //full special
+            Gecko.poke32(p2(p1), 0x03030000);
         }
 
         private void checkBox3_CheckedChanged(object sender, EventArgs e)
@@ -345,15 +354,17 @@ namespace Hyrule
 
         private void timer3_Tick(object sender, EventArgs e)
         {
-            timer3.Interval = 500;
-            Gecko.poke32(0x1071219C, 0x03030000); //full special
+            timer3.Interval = 2000;
+            uint p1 = 0x1071219C;
+            Gecko.poke32(p1, 0x03030000); //full special
+            Gecko.poke32(p2(p1), 0x03030000);
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-
-            Gecko.poke32(0x10712120, 0x00003419); //K.O's (13.337)
-
+            uint p1 = 0x10712120;
+            Gecko.poke32(p1, 0x000061A9); // High KOs (2501)
+            Gecko.poke32(p2(p1), 0x000061A9);
         }
 
         private void checkBox4_CheckedChanged(object sender, EventArgs e)
@@ -376,8 +387,10 @@ namespace Hyrule
 
         private void timer4_Tick(object sender, EventArgs e)
         {
-            timer4.Interval = 500;
-            Gecko.poke32(0x10712120, 0x00003419); //K.O's (13.337)
+            timer4.Interval = 2000;
+            uint p1 = 0x10712120;
+            Gecko.poke32(p1, 0x000061A9); // High KOs (25,000)
+            Gecko.poke32(p2(p1), 0x000061A9);
         }
 
         private void button6_Click(object sender, EventArgs e)
